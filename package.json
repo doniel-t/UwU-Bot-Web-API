@@ -1,0 +1,31 @@
+{
+  "name": "uwu-bot-web-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doniel-t/UwU-Bot-Web-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/doniel-t/UwU-Bot-Web-API/issues"
+  },
+  "homepage": "https://github.com/doniel-t/UwU-Bot-Web-API#readme",
+  "devDependencies": {
+    "@types/node": "^18.7.21",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.3"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.14",
+    "express": "^4.18.1"
+  }
+}
