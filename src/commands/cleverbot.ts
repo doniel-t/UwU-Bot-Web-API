@@ -1,6 +1,6 @@
 import { Command } from '../utils/commandsHandling/Command';
 import cleverbot from 'cleverbot-free';
-import { APIPayload } from '../types/apiParam';
+import { APIPayload } from '../types/APIParam';
 
 class Cleverbot extends Command {
   async getResContent(payload: APIPayload) {

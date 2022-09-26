@@ -1,6 +1,6 @@
 import { Response } from 'express';
-import { APIPayload } from '../../types/apiParam';
-import { APIResponse } from '../../types/apiResponse';
+import { APIPayload } from '../../types/APIParam';
+import { APIResponse } from '../../types/APIResponse';
 
 export abstract class Command {
   async getResContent(payload: APIPayload): Promise<any> {
@@ -19,7 +19,7 @@ export abstract class Command {
       return;
     }
     return Promise.resolve({
-      command: 'uwufy',
+      command: '',
       input: content,
       response: res,
     });

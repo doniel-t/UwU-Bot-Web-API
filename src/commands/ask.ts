@@ -1,5 +1,5 @@
 import { Command } from '../utils/commandsHandling/Command';
-import { APIPayload } from '../types/apiParam';
+import { APIPayload } from '../types/APIParam';
 import { ASK_ANSWERS, APRIL_FOOLS_ANSWERS } from '../../assets/askStrings';
 
 class Ask extends Command {

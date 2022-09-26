@@ -1,7 +1,7 @@
 import { Command } from './Command';
 import requireDir from 'require-dir';
 import { Request, Response } from 'express';
-import { APIPayload } from '../../types/apiParam';
+import { APIPayload } from '../../types/APIParam';
 
 function getCommand(key: string): Command {
   const commands = requireDir('../../commands');
@@ -13,12 +13,8 @@ function getCommand(key: string): Command {
 export async function getCommandResponse(request: Request, response: Response): Promise<any> {
   const command = getCommand(request.params.command);
   const reqJSON: { payload: APIPayload } = request.body;
-  try {
-    const reply = await command.reply(reqJSON.payload, response);
-    return reply;
-  } catch (e) {
-    throw e;
-  }
+  const reply = await command.reply(reqJSON.payload, response);
+  return reply;
 }
 
 export function getCommandNames(): string[] {

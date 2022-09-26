@@ -1,5 +1,5 @@
 import { Command } from '../utils/commandsHandling/Command';
-import { APIPayload } from '../types/apiParam';
+import { APIPayload } from '../types/APIParam';
 
 class UwUfy extends Command {
   async getResContent(payload: APIPayload): Promise<string> {

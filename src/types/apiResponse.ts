@@ -1,4 +1,4 @@
-import { APIPayload } from './apiParam';
+import { APIPayload } from './APIParam';
 
 export type APIResponse = {
   command: string;

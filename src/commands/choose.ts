@@ -1,5 +1,5 @@
 import { Command } from '../utils/commandsHandling/Command';
-import { APIPayload } from '../types/apiParam';
+import { APIPayload } from '../types/APIParam';
 
 class Choose extends Command {
   getRandomChoice(optionArr: string[]): string {
