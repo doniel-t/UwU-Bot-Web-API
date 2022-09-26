@@ -1,10 +1,6 @@
 import express, { Request, Response } from 'express';
 import { getCommandResponse, getValidCommands } from './utils/commandsHandling/getCommands';
-import {
-  handleInvalidBody,
-  handleInvalidURLParams,
-  isValidCommand,
-} from './utils/paramHandler';
+import { handleInvalidURLParams, isValidCommand } from './utils/paramHandler';
 
 const app = express();
 app.use(express.json());
@@ -22,6 +18,7 @@ app.post('/:command', async (request: Request<{ command: string }>, response: Re
     handleInvalidURLParams(request, response);
     return;
   }
+  // finds command based on header of request and executes, throws error if it fails
   let cmdResponse;
   cmdResponse = await getCommandResponse(request, response);
   if (!cmdResponse) return;
