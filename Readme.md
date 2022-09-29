@@ -9,6 +9,11 @@ Currently Supports following commands:
    needs: ```content``` parameter
 4. uwufy\
    needs: ```content``` parameter\
+5. textFromImageExtractor\
+   needs: ```imageURL``` parameter\
+6. translate\
+   needs: ```content``` and ```language``` parameter\
+   For language refer to https://www.w3schools.com/tags/ref_language_codes.asp for more info
 \
 An example call can be found below
 ```
