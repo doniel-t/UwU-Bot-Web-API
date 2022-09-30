@@ -5,7 +5,7 @@ import { TSMap } from 'typescript-map';
 class UwUfy extends Command {
   getDefinition(): { name: string; params: TSMap<string, string> } {
     const paramMap = new TSMap<string, string>();
-    paramMap.set('content', 'Content you want uwufied');
+    paramMap.set('content', 'Content you want uwufied <string>');
     return { name: 'uwufy', params: paramMap };
   }
 

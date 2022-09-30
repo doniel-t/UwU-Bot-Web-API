@@ -11,8 +11,11 @@ class Translate extends Command {
 
   getDefinition(): { name: string; params: TSMap<string, string> } {
     const paramMap = new TSMap<string, string>();
-    paramMap.set('content', 'Content you want translated');
-    paramMap.set('language', 'Language you want the text to be translated');
+    paramMap.set('content', 'Content you want translated <string>');
+    paramMap.set(
+      'language',
+      'Language you want the text to be translated <string, refer to https://www.w3schools.com/tags/ref_language_codes.asp>'
+    );
     return { name: 'translate', params: paramMap };
   }
 

@@ -19,7 +19,7 @@ class Ask extends Command {
 
   getDefinition(): { name: string; params: TSMap<string, string> } {
     const paramMap = new TSMap<string, string>();
-    paramMap.set('content', 'Question you want to ask');
+    paramMap.set('content', 'Question you want to ask <string>');
     return { name: 'ask', params: paramMap };
   }
 

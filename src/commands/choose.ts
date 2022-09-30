@@ -9,7 +9,7 @@ class Choose extends Command {
 
   getDefinition(): { name: string; params: TSMap<string, string> } {
     const paramMap = new TSMap<string, string>();
-    paramMap.set('chooseArr', 'String Array of posibilites to choose from');
+    paramMap.set('chooseArr', 'String Array of posibilites to choose from <string[]>');
     return {
       name: 'choose',
       params: paramMap,

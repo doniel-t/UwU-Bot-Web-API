@@ -11,7 +11,7 @@ class TextFromImageExtractor extends Command {
 
   getDefinition(): { name: string; params: TSMap<string, string> } {
     const paramMap = new TSMap<string, string>();
-    paramMap.set('imageURL', 'URL of the Image you want text extracted from');
+    paramMap.set('imageURL', 'URL of the Image you want text extracted from <string>');
     return { name: 'textFromImageExtractor', params: paramMap };
   }
 

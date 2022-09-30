@@ -9,8 +9,8 @@ class Rng extends Command {
 
   getDefinition(): { name: string; params: TSMap<string, string> } {
     const paramMap = new TSMap<string, string>();
-    paramMap.set('lowerBound', 'LowerBound of your random Number');
-    paramMap.set('upperBound', 'UpperBound of your random Number');
+    paramMap.set('lowerBound', 'LowerBound of your random Number <number>');
+    paramMap.set('upperBound', 'UpperBound of your random Number <number>');
     return { name: 'rng', params: paramMap };
   }
 

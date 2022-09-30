@@ -12,7 +12,7 @@ class Cleverbot extends Command {
 
   getDefinition(): { name: string; params: TSMap<string, string> } {
     const paramMap = new TSMap<string, string>();
-    paramMap.set('content', 'Question you want to ask cleverbot');
+    paramMap.set('content', 'Question you want to ask cleverbot <string>');
     return { name: 'cleverbot', params: paramMap };
   }
 }
