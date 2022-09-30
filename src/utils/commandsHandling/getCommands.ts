@@ -2,6 +2,7 @@ import { Command } from './Command';
 import requireDir from 'require-dir';
 import { Request, Response } from 'express';
 import { APIPayload } from '../../types/APIParam';
+import { TSMap } from 'typescript-map';
 
 function getCommand(key: string): Command {
   const commands = requireDir('../../commands');
@@ -19,6 +20,33 @@ export async function getCommandResponse(request: Request, response: Response): 
 
 export function getCommandNames(): string[] {
   return Object.keys(requireDir('../../commands'));
+}
+
+function getCommands(): Command[] {
+  let commands: Command[] = [];
+  const cmdNames = getCommandNames();
+  cmdNames.forEach((cmdName: string) => {
+    commands.push(getCommand(cmdName));
+  });
+  return commands;
+}
+
+function tsMapToJSONString(map: TSMap<string, string>): string {
+  return JSON.stringify(map.toJSON());
+}
+
+export function commandToJSONString(): string {
+  let cmdString = '';
+  const commands = getCommands();
+  commands.forEach((command: Command, index: number) => {
+    const cmdDefinition = command.getDefinition();
+    if (index === commands.length - 1) {
+      cmdString += `"${cmdDefinition.name}": ${tsMapToJSONString(cmdDefinition.params)}`;
+      return;
+    }
+    cmdString += `"${cmdDefinition.name}": ${tsMapToJSONString(cmdDefinition.params)},`;
+  });
+  return `{${cmdString}}`;
 }
 
 export function getValidCommands(): string {

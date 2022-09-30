@@ -1,6 +1,7 @@
 import translate from '@vitalets/google-translate-api';
 import { Command } from '../utils/commandsHandling/Command';
 import { APIPayload } from '../types/APIParam';
+import { TSMap } from 'typescript-map';
 
 class Translate extends Command {
   async translateTo(toTranslate: string, language: translate.IOptions): Promise<string> {
@@ -8,9 +9,16 @@ class Translate extends Command {
     return translatedText.text;
   }
 
+  getDefinition(): { name: string; params: TSMap<string, string> } {
+    const paramMap = new TSMap<string, string>();
+    paramMap.set('content', 'Content you want translated');
+    paramMap.set('language', 'Language you want the text to be translated');
+    return { name: 'translate', params: paramMap };
+  }
+
   async getResContent(content: APIPayload): Promise<string> {
-    if (!content.content) throw new Error('Invalid Input');
-    if (!content.language) throw new Error('Invalid Input');
+    if (!content.content) throw new Error('content must not be empty');
+    if (!content.language) throw new Error('language must not be empty');
     return this.translateTo(content.content, { to: content.language });
   }
 }

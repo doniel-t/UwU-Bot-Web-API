@@ -31,6 +31,7 @@
     "express": "^4.18.1",
     "require-dir": "^1.2.0",
     "tesseract.js": "^3.0.3",
-    "translate": "^1.4.1"
+    "translate": "^1.4.1",
+    "typescript-map": "^0.1.0"
   }
 }

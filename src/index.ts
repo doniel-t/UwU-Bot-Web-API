@@ -1,5 +1,5 @@
-import express, { Request, Response, Router } from 'express';
-import { getCommandResponse, getValidCommands } from './utils/commandsHandling/getCommands';
+import express, { Request, Response } from 'express';
+import { commandToJSONString, getCommandResponse } from './utils/commandsHandling/getCommands';
 import { handleInvalidURLParams, isValidCommand } from './utils/paramHandler';
 
 const app = express();
@@ -9,7 +9,7 @@ const port = 6969;
 app.get('/commands', (request: Request, response: Response) => {
   response.status(200);
   response.send({
-    commandList: getValidCommands(),
+    commandList: JSON.parse(commandToJSONString()),
   });
 });
 
