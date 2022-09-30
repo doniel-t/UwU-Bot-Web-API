@@ -1,20 +1,28 @@
 # UwU Bot API
-Simple Express API for UwU Bot Services\
-Currently Supports following commands:
-1. ask\
-   needs: ```content``` parameter
-2. choose\
-   needs: ```chooseArr``` parameter
-3. cleverbot\
-   needs: ```content``` parameter
-4. uwufy\
-   needs: ```content``` parameter\
-5. textFromImageExtractor\
-   needs: ```imageURL``` parameter\
-6. translate\
-   needs: ```content``` and ```language``` parameter\
-   For language refer to https://www.w3schools.com/tags/ref_language_codes.asp for more info
+An Express based Rest API written in TypeScript
+---
+This API is the endpoint for an UwU-Bot Discord bot inspired API which will be accessed via a Web Frontend.\
+The best way to test this api is via postman or your preffered tool, however normal curl request can be found below\
 \
+Get all supported commands and their parameters: 
+```
+curl --location --request GET 'localhost:6969/commands'
+```
+Response will look like this: 
+```
+{
+   "commandList": {
+      "commandName1": {
+         "param1": "Description of param1",
+         "param2": "Description of param2"
+      }
+      "commandName2": {
+         "param1": "Description of param1"
+      }
+   }
+}
+```
+
 An example call can be found below
 ```
 curl --location --request POST 'localhost:6969/cleverbot' \
