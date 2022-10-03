@@ -1,8 +1,8 @@
 import { Command } from '../utils/commandsHandling/Command';
 import { APIPayload } from '../types/APIParam';
 import { TSMap } from 'typescript-map';
-import { fetchMoviesByGenre } from '../utils/services/movieHandling/movieByGenreFetcher';
-import { toJSONString } from '../utils/services/movieHandling/utils';
+import { fetchMoviesByGenre } from '../services/movieHandling/movieByGenreFetcher';
+import { toJSONString } from '../services/movieHandling/utils';
 
 class MovieSuggestion extends Command {
   getDefinition(): { name: string; params: TSMap<string, string> } {
