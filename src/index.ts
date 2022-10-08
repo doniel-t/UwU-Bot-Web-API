@@ -7,6 +7,7 @@ app.use(express.json());
 const port = 6969;
 
 app.get('/commands', (request: Request, response: Response) => {
+  console.log('/commands was invoked');
   response.status(200);
   response.send({
     commandList: JSON.parse(commandToJSONString()),
@@ -31,5 +32,5 @@ app.post('/:command', async (request: Request<{ command: string }>, response: Re
 });
 
 app.listen(port, () => {
-  console.log('started listening');
+  console.log(`started listening on localhost:${port}`);
 });

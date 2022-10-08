@@ -43,3 +43,11 @@ A response could look like this
     "response": "No..."
 }
 ```
+
+TODO:
+[ ] Add flask server for python api
+[ ] Add PDF Editor
+[ ] Add word definition lookup
+[ ] Add meme maker
+[ ] Add wordle 
+[ ] prompt based image generation

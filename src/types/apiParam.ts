@@ -6,6 +6,6 @@ export type APIPayload = {
   lowerBound?: number;
   upperBound?: number;
   chooseArr?: string[];
-  wantTheatreMovie?: boolean | undefined;
-  movieGenre: string;
+  wantTheatreMovie?: boolean;
+  movieGenre?: string;
 };
